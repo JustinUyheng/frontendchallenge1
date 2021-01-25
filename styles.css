@@ -1,0 +1,70 @@
+html,body {
+  background-color: #574ADA;
+  height:100%;
+  width:100%;
+}
+
+.container {
+  max-width: 500px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.shade {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  top: 0;
+}
+
+h1 {
+  color: white;
+  font-family: Segoe UI;
+  font-size: 50px;
+}
+
+.thick {
+  font-weight: 400;
+}
+
+.thin {
+  font-weight: 200;
+  margin-top: -20px;
+}
+
+button {
+  font-size: 20px;
+  border-radius: 35px;
+  padding: 12px;
+  background-color: #362F90;
+  color: white;
+  border: 0px;
+  font-weight: 200;
+  min-length: 60px;
+}
+
+.upscale {
+  font-size: 40px;
+}
+
+.slider {
+  flex: 1;
+  background-color: red;
+  background-image: url("https://software-advice.imgix.net/managed/products/screenshots/screenshot_200381.png?auto=format&w=600&h=450");
+}
+
+.top {
+  
+}
+
+.middle {
+  
+}
+
+.bottom {
+ 
+}

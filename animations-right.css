@@ -1,0 +1,29 @@
+.slide-right {
+  animation-duration: 6s;
+  animation-name: slidein-right;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+
+@keyframes slidein-right {
+  from {
+    margin-left: -150%;
+    width: 100%;
+  }
+  
+  25% {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  75% {
+    margin-left: -150%;
+    width: 100%;
+  }
+  
+  100% {
+    margin-left: -150%;
+    width: 100%;
+    visibility: hidden;
+  }
+}
