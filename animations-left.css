@@ -1,29 +1,18 @@
 .slide-left {
-  animation-duration: 6s;
+  animation-duration: 3s;
   animation-name: slidein-left;
+  animation-direction: alternate;
   animation-fill-mode: both;
   animation-iteration-count: infinite;
 }
 
 @keyframes slidein-left {
   from {
-    margin-left: 100%;
-    width: 300%;
+    transform: translateX(100vw);
   }
-  
-  25% {
-    margin-left: -150%;
-    width: 100%;
-  }
-
-  75% {
-    margin-left: 100%;
-    width: 300%;
-  }
-  
-  100% {
-    margin-left: 100%;
-    width: 300%;
+   
+  to {
+    transform: translateX(-100%);
     visibility: hidden;
   }
 }

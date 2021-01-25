@@ -1,24 +1,25 @@
 html,body {
-  background-color: #574ADA;
   height:100%;
   width:100%;
+  overflow: hidden;
+  background-color: #574ADA;
 }
 
 .container {
+  position: relative;
   max-width: 500px;
   margin: auto;
-  overflow: hidden;
-  position: relative;
+  margin-top: 50px;
 }
 
 .shade {
-  height: 100%;
-  width: 100%;
-  position: absolute;
   display: flex;
   flex-direction: column;
+  position: absolute;
   gap: 5px;
   top: 0;
+  height: 100%;
+  width: 100%;
 }
 
 h1 {
@@ -28,23 +29,34 @@ h1 {
 }
 
 .thick {
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .thin {
-  font-weight: 200;
   margin-top: -20px;
+  font-weight: 200;
 }
 
 button {
-  font-size: 20px;
-  border-radius: 35px;
-  padding: 12px;
-  background-color: #362F90;
-  color: white;
+  display: flex;
   border: 0px;
+  border-radius: 35px;
+  padding: 12px 24px;
+  font-size: 20px;
   font-weight: 200;
-  min-length: 60px;
+  color: white;
+  background-color: #362F90;
+}
+
+.button-content {
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.button-icon {
+  width: 48px;
+  height: 48px;
 }
 
 .upscale {
@@ -52,19 +64,7 @@ button {
 }
 
 .slider {
+  width: 250%;
   flex: 1;
-  background-color: red;
   background-image: url("https://software-advice.imgix.net/managed/products/screenshots/screenshot_200381.png?auto=format&w=600&h=450");
-}
-
-.top {
-  
-}
-
-.middle {
-  
-}
-
-.bottom {
- 
 }
