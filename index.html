@@ -15,6 +15,13 @@
 
   <script>
       microsoftTeams.initialize();
+      const getId = () => {
+        let urlParams = new URLSearchParams(document.location.search.substring(1));
+        let blueTeamId = urlParams.get('team');
+        return blueTeamId
+    }
+//For testing, you can invoke the following to view the pertinent value:
+document.write(getId());
       let saveGray = () => {
           microsoftTeams.settings.registerOnSaveHandler((saveEvent) => {
               microsoftTeams.settings.setSettings({
@@ -55,13 +62,13 @@
           saveRed();
       }
   </script>
-  
-  <span id="user"></span>
+
+  <!-- <span id="user"></span>
   <script>
     microsoftTeams.initialize();
     microsoftTeams.getTabInstances(function (tabInstances) {
         alert(JSON.stringify(tabInstances));
-    });
+    }); -->
     
     // microsoftTeams.getContext((context) =>{
     //     let userId = document.getElementById('user');
