@@ -17,6 +17,9 @@
   <span id="user"></span>
   <script>
     microsoftTeams.initialize();
+    microsoftTeams.getTabInstances(function (tabInstances) {
+        alert(JSON.stringify(tabInstances));
+    });
     let saveGray = () => {
         microsoftTeams.settings.registerOnSaveHandler((saveEvent) => {
             microsoftTeams.settings.setSettings({
@@ -57,9 +60,7 @@
         saveRed();
     }
     
-    microsoftTeams.getTabInstances(function (tabInstances) {
-        alert(JSON.stringify(tabInstances));
-    });
+ 
     // microsoftTeams.getTabInstance((tabInstance) =>{
     //     let userId = document.getElementById('user');
     //     userId.innerHTML = tabInstance.entityId;
