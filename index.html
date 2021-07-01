@@ -18,7 +18,7 @@
   <script>
     microsoftTeams.initialize();
     microsoftTeams.getTabInstances(function (tabInstances) {
-        alert(JSON.stringify(tabInstances[entityId]));
+        alert(JSON.stringify(tabInstances));
     });
     let saveGray = () => {
         microsoftTeams.settings.registerOnSaveHandler((saveEvent) => {
