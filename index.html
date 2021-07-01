@@ -24,9 +24,8 @@
   <script>
     microsoftTeams.initialize();
     microsoftTeams.getTabInstance((tabInstance) =>{
-        print("hello");
         let userId = document.getElementById('user');
-        userId.innerHTML = tabInstance.entityId;
+        userId.innerHTML = tabInstance.entityId.concat("weird");
     });
 </script>
   <!-- <div class="shade">
