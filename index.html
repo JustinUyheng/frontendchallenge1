@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="animations-right.css"> -->
 </head>
 <body>
+  <div></div>
   <div class="container">
     <h1 class="thin"><b class="thick">Manage your design team</b><br> with a platform that fits your needs</h1>
     <button class="button-content">
@@ -20,11 +21,9 @@
       </div>
     </button>
   </div>
-  <div>
-
-  </div>
   <script>
-    microsoftTeams.getContext()
+    var context = microsoftTeams.getContext()
+    document.getElementsByTagName('div')[0].innerHTML = context;
   </script>
   <!-- <div class="shade">
     <div class="slide-left slider"></div>
