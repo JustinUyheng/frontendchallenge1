@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Frontend Challenge #1</title>
   <link rel="stylesheet" href="styles.css">
+  <!-- Microsoft Teams JavaScript API (via CDN) --> 
+  <script src="https://statics.teams.microsoft.com/sdk/v1.5.2/js/MicrosoftTeams.min.js" crossorigin="anonymous"></script>
   <!-- <link rel="stylesheet" href="animations-left.css">
   <link rel="stylesheet" href="animations-right.css"> -->
 </head>
@@ -18,6 +20,12 @@
       </div>
     </button>
   </div>
+  <div>
+
+  </div>
+  <script>
+    microsoftTeams.getContext()
+  </script>
   <!-- <div class="shade">
     <div class="slide-left slider"></div>
     <div class="slide-right slider"></div>
