@@ -1,88 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>POC</title>
-  <link rel="stylesheet" href="styles.css">
-  <!-- Microsoft Teams JavaScript API (via CDN) --> 
-  <script src="https://statics.teams.microsoft.com/sdk/v1.5.2/js/MicrosoftTeams.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Microsoft Teams JavaScript API (via CDN) -->
+    <script src="https://statics.teams.microsoft.com/sdk/v1.5.2/js/MicrosoftTeams.min.js"
+        crossorigin="anonymous"></script>
 </head>
+
 <body>
-  <button onclick="(document.getElementById('icon').src = '/images/iconGray.png'); colorClickGray()">Select Gray</button>
-  <img id="icon" src="/images/teamsIcon.png" alt="icon" style="width:100px" />
-  <button onclick="(document.getElementById('icon').src = '/images/iconRed.png'); colorClickRed()">Select Red</button>
-  <span id="user"></span>
-  <script>
-      microsoftTeams.initialize();
-      microsoftTeams.getContext((context) =>{
-        let userId = document.getElementById('user');
-        // userId.innerHTML = context.userPrincipalName;
-        userId.innerHTML = context.entityId;
-      });
-      microsoftTeams.getTabInstances(function (tabInstances) {
+    <a href="config.html">config</a>
+    <span id="user"></span>
+    <script>
+        microsoftTeams.initialize();
+        microsoftTeams.getContext((context) => {
+            let userId = document.getElementById('user');
+            // userId.innerHTML = context.userPrincipalName;
+            userId.innerHTML = context.entityId;
+        });
+        microsoftTeams.getTabInstances(function (tabInstances) {
             alert(JSON.stringify(tabInstances));
         });
-      const getId = () => {
-        let urlParams = new URLSearchParams(document.location.search.substring(1));
-        let blueTeamId = urlParams.get('team');
-        return blueTeamId
-      }
-      //For testing, you can invoke the following to view the pertinent value:
-      document.write(getId());
-      
-      let saveGray = () => {
-          microsoftTeams.settings.registerOnSaveHandler((saveEvent) => {
-              microsoftTeams.settings.setSettings({
-                  websiteUrl: "https://yourWebsite.com",
-                  contentUrl: "https://yourWebsite.com/gray",
-                  entityId: "grayIconTab",
-                  suggestedDisplayName: "MyNewTab"
-              });
-              saveEvent.notifySuccess();
-          });
-      }
-      let saveRed = () => {
-          microsoftTeams.settings.registerOnSaveHandler((saveEvent) => {
-              microsoftTeams.settings.setSettings({
-                  websiteUrl: "https://yourWebsite.com",
-                  contentUrl: "https://yourWebsite.com/red",
-                  entityId: "redIconTab",
-                  suggestedDisplayName: "MyNewTab"
-              });
-              saveEvent.notifySuccess();
-          });
-      }
+        const getId = () => {
+            let urlParams = new URLSearchParams(document.location.search.substring(1));
+            let blueTeamId = urlParams.get('team');
+            return blueTeamId
+        }
+        //For testing, you can invoke the following to view the pertinent value:
+        document.write(getId());
+    </script>
 
-      let gr = document.getElementById("gray").style;
-      let rd = document.getElementById("red").style;
-
-      const colorClickGray = () => {
-          gr.display = "block";
-          rd.display = "none";
-          microsoftTeams.settings.setValidityState(true);
-          saveGray()
-      }
-
-      const colorClickRed = () => {
-          rd.display = "block";
-          gr.display = "none";
-          microsoftTeams.settings.setValidityState(true);
-          saveRed();
-      }
-  </script>
-
-  <!-- <span id="user"></span>
+    <!-- <span id="user"></span>
   <script>
     microsoftTeams.initialize();
     microsoftTeams.getTabInstances(function (tabInstances) {
         alert(JSON.stringify(tabInstances));
     }); -->
-<!--     
+    <!--     
     // microsoftTeams.getContext((context) =>{
     //     let userId = document.getElementById('user');
     //     userId.innerHTML = context.entityId;
     // }); -->
-</script>
+    </script>
 </body>
+
 </html>
