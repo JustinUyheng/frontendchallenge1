@@ -23,10 +23,13 @@
   </div>
   <script>
     microsoftTeams.initialize();
-    microsoftTeams.getTabInstance((tabInstance) =>{
-        let userId = document.getElementById('user');
-        userId.innerHTML = tabInstance.entityId;
+    microsoftTeams.getTabInstances(function (tabInstances) {
+        alert(JSON.stringify(tabInstances));
     });
+    // microsoftTeams.getTabInstance((tabInstance) =>{
+    //     let userId = document.getElementById('user');
+    //     userId.innerHTML = tabInstance.entityId;
+    // });
     // microsoftTeams.getContext((context) =>{
     //     let userId = document.getElementById('user');
     //     userId.innerHTML = context.entityId;
