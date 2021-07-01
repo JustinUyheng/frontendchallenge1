@@ -23,10 +23,8 @@
   </div>
   <script>
     microsoftTeams.initialize();
-    microsoftTeams.getContext((context) =>{
-        let userId = document.getElementById('user');
-        userId.innerHTML = context.entityId;
-    });
+    let userId = document.getElementById('user');
+    userId.innerHTML = microsoftTeams.getTabInstances();
 </script>
   <!-- <div class="shade">
     <div class="slide-left slider"></div>
