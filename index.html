@@ -19,13 +19,15 @@
         <b class="upscale">wednesday</b>.com
       </div>
     </button> -->
-    <h1 id="data">Context here</h1>
+    <span id="user"></span>
   </div>
-  <script type="text/javascript">
-    microsoftTeams.initialize()
-    var context = microsoftTeams.getContext()
-    document.getElementById("data").innerHTML=context;
-  </script>
+  <script>
+    microsoftTeams.initialize();
+    microsoftTeams.getContext((context) =>{
+        let userId = document.getElementById('user');
+        userId.innerHTML = context.userPrincipalName;
+    });
+</script>
   <!-- <div class="shade">
     <div class="slide-left slider"></div>
     <div class="slide-right slider"></div>
