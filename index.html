@@ -24,7 +24,8 @@
       document.write(getId());
       microsoftTeams.getContext((context) =>{
         let userId = document.getElementById('user');
-        userId.innerHTML = context.userPrincipalName;
+        // userId.innerHTML = context.userPrincipalName;
+        userId.innerHTML = context.entityId;
       });
       let saveGray = () => {
           microsoftTeams.settings.registerOnSaveHandler((saveEvent) => {
