@@ -15,6 +15,11 @@
   <span id="user"></span>
   <script>
       microsoftTeams.initialize();
+      microsoftTeams.getContext((context) =>{
+        let userId = document.getElementById('user');
+        // userId.innerHTML = context.userPrincipalName;
+        userId.innerHTML = context.entityId;
+      });
       microsoftTeams.getTabInstances(function (tabInstances) {
             alert(JSON.stringify(tabInstances));
         });
@@ -25,11 +30,7 @@
       }
       //For testing, you can invoke the following to view the pertinent value:
       document.write(getId());
-      microsoftTeams.getContext((context) =>{
-        let userId = document.getElementById('user');
-        // userId.innerHTML = context.userPrincipalName;
-        userId.innerHTML = context.entityId;
-      });
+      
       let saveGray = () => {
           microsoftTeams.settings.registerOnSaveHandler((saveEvent) => {
               microsoftTeams.settings.setSettings({
