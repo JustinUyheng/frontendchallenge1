@@ -39,25 +39,3 @@
   </div> -->
 </body>
 </html>
-
-
-<!-- export function getTabInstances(
-  callback: (tabInfo: TabInformation) => void,
-  tabInstanceParameters?: TabInstanceParameters,
-): void {
-  ensureInitialized();
-
-  sendMessageToParent('getTabInstances', [tabInstanceParameters], callback);
-}
-
-export function getContext(callback: (context: Context) => void): void {
-  ensureInitialized();
-
-  sendMessageToParent('getContext', (context: Context) => {
-    if (!context.frameContext) {
-      // Fallback logic for frameContext properties
-      context.frameContext = GlobalVars.frameContext;
-    }
-    callback(context);
-  });
-} -->
