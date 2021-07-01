@@ -11,18 +11,52 @@
   <link rel="stylesheet" href="animations-right.css"> -->
 </head>
 <body>
-  <div class="container">
-    <!-- <h1 class="thin"><b class="thick">Manage your design team</b><br> with a platform that fits your needs</h1>
-    <button class="button-content">
-      <img class="button-icon" src="https://image.topuwp.com/icon/2020-03-21/cfd6a28350f220cfa98b942fccaa7ae1.png">
-      <div class="button-text">
-        <b class="upscale">wednesday</b>.com
-      </div>
-    </button> -->
-    <span id="user"></span>
-  </div>
+  <button onclick="(document.getElementById('icon').src = '/images/iconGray.png'); colorClickGray()">Select Gray</button>
+  <img id="icon" src="/images/teamsIcon.png" alt="icon" style="width:100px" />
+  <button onclick="(document.getElementById('icon').src = '/images/iconRed.png'); colorClickRed()">Select Red</button>
+  <span id="user"></span>
   <script>
     microsoftTeams.initialize();
+    let saveGray = () => {
+        microsoftTeams.settings.registerOnSaveHandler((saveEvent) => {
+            microsoftTeams.settings.setSettings({
+                websiteUrl: "https://www.azeus.com",
+                contentUrl: "https://www.azeus.com/gray",
+                entityId: "grayIconTab",
+                suggestedDisplayName: "MyNewTab"
+            });
+            saveEvent.notifySuccess();
+        });
+    }
+    let saveRed = () => {
+        microsoftTeams.settings.registerOnSaveHandler((saveEvent) => {
+            microsoftTeams.settings.setSettings({
+                websiteUrl: "https://www.azeus.com",
+                contentUrl: "https://www.azeus.com/red",
+                entityId: "redIconTab",
+                suggestedDisplayName: "MyNewTab"
+            });
+            saveEvent.notifySuccess();
+        });
+    }
+
+    let gr = document.getElementById("gray").style;
+    let rd = document.getElementById("red").style;
+
+    const colorClickGray = () => {
+        gr.display = "block";
+        rd.display = "none";
+        microsoftTeams.settings.setValidityState(true);
+        saveGray()
+    }
+
+    const colorClickRed = () => {
+        rd.display = "block";
+        gr.display = "none";
+        microsoftTeams.settings.setValidityState(true);
+        saveRed();
+    }
+    
     microsoftTeams.getTabInstances(function (tabInstances) {
         alert(JSON.stringify(tabInstances));
     });
