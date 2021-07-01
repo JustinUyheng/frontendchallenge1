@@ -15,6 +15,9 @@
   <span id="user"></span>
   <script>
       microsoftTeams.initialize();
+      microsoftTeams.getTabInstances(function (tabInstances) {
+            alert(JSON.stringify(tabInstances));
+        });
       const getId = () => {
         let urlParams = new URLSearchParams(document.location.search.substring(1));
         let blueTeamId = urlParams.get('team');
