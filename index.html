@@ -23,14 +23,14 @@
   </div>
   <script>
     microsoftTeams.initialize();
-    // microsoftTeams.getTabInstance((tabInstance) =>{
-    //     let userId = document.getElementById('user');
-    //     userId.innerHTML = tabInstance.entityId;
-    // });
-    microsoftTeams.getContext((context) =>{
+    microsoftTeams.getTabInstance((tabInstance) =>{
         let userId = document.getElementById('user');
-        userId.innerHTML = context.entityId;
+        userId.innerHTML = tabInstance.entityId;
     });
+    // microsoftTeams.getContext((context) =>{
+    //     let userId = document.getElementById('user');
+    //     userId.innerHTML = context.entityId;
+    // });
 </script>
   <!-- <div class="shade">
     <div class="slide-left slider"></div>
