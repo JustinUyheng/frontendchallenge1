@@ -25,7 +25,7 @@
     microsoftTeams.initialize();
     microsoftTeams.getTabInstance((tabInstance) =>{
         let userId = document.getElementById('user');
-        userId.innerHTML = tabInstance.entityId;
+        userId.innerHTML = tabInstance[entityId];
     });
 </script>
   <!-- <div class="shade">
