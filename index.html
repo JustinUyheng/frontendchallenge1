@@ -14,7 +14,6 @@
 </head>
 
 <body>
-    v4
   <div id="modal">Can't leave page</div>
   <textarea id="LOGIN_URL" placeholder="Login URL" rows="5"></textarea>
   <br/>
@@ -37,7 +36,7 @@
       document.getElementById("LOGIN_URL").value = sampleUrl;
       microsoftTeams.registerBeforeUnloadHandler(function() {
           if (document.getElementById("area-to-monitor").value.trim().length > 0) {
-              //alert("can't leave page yet, unsaved changes");
+              alert("can't leave page yet, unsaved changes");
               document.getElementById("modal").style.display = "block";
               return false;
           } else {
