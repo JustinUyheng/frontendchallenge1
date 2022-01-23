@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    v2
   <div id="modal">Can't leave page</div>
   <textarea id="LOGIN_URL" placeholder="Login URL" rows="5"></textarea>
   <br/>
@@ -38,10 +39,10 @@
           if (document.getElementById("area-to-monitor").value.trim().length > 0) {
               alert("can't leave page yet, unsaved changes");
               document.getElementById("modal").style.display = "block";
-              return false;
+              return true;
           } else {
               document.getElementById("modal").style.display = "none";
-              return true;
+              return false;
           }
       });
     }
