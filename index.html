@@ -37,7 +37,7 @@
       document.getElementById("LOGIN_URL").value = sampleUrl;
       microsoftTeams.registerBeforeUnloadHandler(function() {
           if (document.getElementById("area-to-monitor").value.trim().length > 0) {
-              alert("can't leave page yet, unsaved changes");
+              //alert("can't leave page yet, unsaved changes");
               document.getElementById("modal").style.display = "block";
               return true;
           } else {
